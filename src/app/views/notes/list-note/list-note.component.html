@@ -1,0 +1,48 @@
+<!-- Page content holder -->
+<div class="page-content p-5">
+  <div class="col-lg-7 mx-auto">
+    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+      <a (click)="open(content, '')" class="btn btn-light m-0 rounded-pill"> <i class="fa fa-plus text-muted"></i>
+      </a>
+
+      <input type="search" class="form-control border-0" id="search" />
+      <div class="input-group-append">
+        <button class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-search mr-2 text-muted"></i>
+          <small class="text-uppercase font-weight-bold text-muted">Search Note</small>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Demo content -->
+  <div class="row text-white">
+    <div class="col-lg-4" *ngFor="let note of notes">
+
+      <div class="bg-white shadow p-3 rounded jusrify-content-center h-100">
+        <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2">
+          <h5 class="title small font-weight-bold text-muted mb-0">{{note.title}}</h5>
+          <button type="button" data-descr="Delete"
+            style="color: #e4002b; background: none; border: none; margin-left: 35px;" (click)="delete(note.id)"><i
+              class="fa fa-trash"></i></button>
+          <a type="button" style="color: #008eaa; background: none; border: none;" href="javascript:;" (click)="open(content, note.id)"><i
+              class="fa fa-edit"></i></a>
+        </div>
+        <p class=" mb-2 mt-2 text-muted">{{note.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End demo content -->
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+   <app-add-edit-note [noteId]="noteId" (notes) = "getUpdatedItems($event)"></app-add-edit-note>
+
+
+</ng-template>

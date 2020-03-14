@@ -1,0 +1,176 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  font-family: sans-serif;
+  margin-left: 250px;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+#sideMenu {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #252a32;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.99;
+}
+
+.nav-items {
+  padding-inline-start: 0;
+}
+
+.nav-items > li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.nav-items > li:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+strong {
+  color: #e16365;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+#hamburgerBtn {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#hamburgerBtn:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin-left: 0px;
+  }
+  #sideMenu {
+    width: 100vw;
+    transform: translateX(-1000px);
+    transition: 500ms transform;
+  }
+
+  #sideMenu.open {
+    transform: translateX(0);
+  }
+
+  .nav-items > li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #hamburgerBtn {
+    display: inline-block;
+    z-index: 10;
+  }
+}
+
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+/*.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}*/
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}

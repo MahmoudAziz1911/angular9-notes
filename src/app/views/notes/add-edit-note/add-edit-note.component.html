@@ -1,0 +1,19 @@
+<form [formGroup]="addForm" (submit)="onSubmit(noteId)">
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="form-control-label">Title</label>
+      <input type="text" formControlName="title" name="title"
+      [(ngModel)]="noteDetailes.title" placeholder="Title" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Description</label>
+      <textarea rows="6" formControlName="description" name="description"
+      [(ngModel)]="noteDetailes.description" placeholder="Description" class="form-control"></textarea>
+    </div>
+  </div>
+
+</form>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-outline-success">{{noteId === '' ? 'addNote' : 'updateNote'}}</button>
+</div>

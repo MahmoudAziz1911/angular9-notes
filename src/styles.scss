@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+// regular style toast
+@import '~ngx-toastr/toastr';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~assets/css/login.css";
+@import "~assets/css/dashboard.css";
+@import "~assets/css/user.css";
+@import "~assets/css/style.default.css";
+
+
+
+
+body {
+  background: linear-gradient(70deg, #e6e6e6, #f7f7f7);
+  color: #514B64;
+  min-height: 100vh;
+}

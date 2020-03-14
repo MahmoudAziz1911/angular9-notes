@@ -1,0 +1,67 @@
+
+<div class="container text-center text-white">
+
+  <div class="col-lg-11 mx-auto bg-white rounded shadow">
+    <div class="table-header">
+    <h2 class="h5 text-muted">Posts List</h2>
+    <div class="add-btn text-right">
+      <a href="javascript:;" class="btn btn-primary" ngbTooltip="I am Bootstrap Tooltip" style="padding: 5px 20px 5px 20px;" [routerLink]="['../add']"><i class="fa fa-plus"></i></a>
+    </div>
+  </div>
+      <!-- Fixed header table-->
+      <div class="table-responsive">
+          <table class="table table-fixed">
+              <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th style="width: 140px;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor=" let post of posts; index as i">
+                  <td>{{i+1}}</td>
+                  <td>{{ post.title}}</td>
+                  <td>{{(post.description.length > 100)? (post.description|slice:0:70 )+ '.....' : (post.description)}}</td>
+                  <td>
+                     <!-- Call to action buttons -->
+                     <ul class="list-inline m-0">
+                      <li class="list-inline-item">
+                          <a class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip"  data-placement="top" title="Show" [routerLink]="['../show', post.id]"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit" [routerLink]="['../edit', post.id]"><i class="fa fa-edit"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Delete" (click)="deletePost(deleteModal, post.id)"><i class="fa fa-trash"></i></button>
+                      </li>
+                  </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+          </table>
+      </div><!-- End -->
+
+
+</div>
+
+
+<ng-template #deleteModal let-modal>
+<div class="modal-header">
+<h2 class="modal-title" id="modal-title">Item Deletion!</h2>
+<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<p class="text-muted text-center"><strong>Do You Want To Delete This Item ?</strong></p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-danger" (click)="modal.dismiss('Operation Canceled')">Cancel</button>
+<button type="button" class="btn btn-primary"  (click)="modal.close('Ok click')">Delete It</button>
+</div>
+</ng-template>
+
+

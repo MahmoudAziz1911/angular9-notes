@@ -1,0 +1,98 @@
+
+
+
+
+
+
+<div class="page">
+  <!-- Main Navbar-->
+  <header class="header">
+    <nav class="navbar">
+      <!-- Search Box-->
+      <div class="search-box">
+        <button class="dismiss"><i class="icon-close"></i></button>
+        <form id="searchForm" action="#" role="search">
+          <input type="search" placeholder="What are you looking for..." class="form-control">
+        </form>
+      </div>
+      <div class="container-fluid">
+        <div class="navbar-holder d-flex align-items-center justify-content-between">
+          <!-- Navbar Header-->
+          <div class="navbar-header">
+            <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+              <div class="brand-text d-none d-lg-inline-block"><span>Admin </span><strong>Dashboard</strong></div>
+              <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
+            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+          </div>
+          <!-- Navbar Menu -->
+          <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
+            <!-- Languages dropdown    -->
+            <!--<li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
+              <ul aria-labelledby="languages" class="dropdown-menu">
+                <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2">German</a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2">French                                         </a></li>
+              </ul>
+            </li>-->
+            <!-- Logout    -->
+            <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="page-content d-flex align-items-stretch">
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <!-- Sidebar Header-->
+      <div class="sidebar-header d-flex align-items-center">
+        <!--<div class="avatar"><img src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>-->
+        <div class="title">
+          <h1 class="h4">Mahmoud</h1>
+          <p>DashBoard</p>
+        </div>
+      </div>
+      <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+      <ul class="list-unstyled">
+        <li>
+          <a [routerLink]="['../admin']"
+          routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fa fa-home"></i>Dashboard </a></li>
+        <li>
+          <a  class="nav-link" [routerLink]="['../admin/posts']" routerLinkActive="active">
+            <i class="fa fa-th-large"></i>Posts
+          </a>
+        </li>
+        <li><a href="charts.html"> <i class="fa fa-cogs"></i>Setings </a></li>
+      </ul>
+    </nav>
+    <div class="content-inner">
+
+      <router-outlet></router-outlet>
+      <!-- Page Footer-->
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Your company &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com/p/admin-template" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+<button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-md-inline-block"><i class="fa fa-cog fa-2x"></i></button>
+<div id="style-switch" class="collapse">
+
+</div>
+
+
+
+
+
+
